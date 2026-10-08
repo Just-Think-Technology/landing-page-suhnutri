@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  --font-heading: var(--font-montserrat);
+  --color-brand: #4f8f4f;
+  --color-brand-light: #8bc34a;
+  --color-brand-dark: #2e7d32;
+  --color-ink: #424242;
+  --color-surface: #f5f5f5;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #424242;
+  --card: #ffffff;
+  --card-foreground: #424242;
+  --popover: #ffffff;
+  --popover-foreground: #424242;
+  --primary: #2e7d32;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #424242;
+  --muted: #f5f5f5;
+  --muted-foreground: #424242;
+  --accent: #f5f5f5;
+  --accent-foreground: #424242;
+  --destructive: #b42318;
+  --border: color-mix(in srgb, #424242 14%, #ffffff);
+  --input: color-mix(in srgb, #424242 14%, #ffffff);
+  --ring: #4f8f4f;
+  --chart-1: #4f8f4f;
+  --chart-2: #2e7d32;
+  --chart-3: #8bc34a;
+  --chart-4: #424242;
+  --chart-5: #f5f5f5;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #424242;
+  --sidebar-primary: #2e7d32;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5f5f5;
+  --sidebar-accent-foreground: #424242;
+  --sidebar-border: color-mix(in srgb, #424242 14%, #ffffff);
+  --sidebar-ring: #4f8f4f;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-montserrat), sans-serif;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js-hide,
+  .process-line,
+  [data-reveal],
+  [data-stagger] > *,
+  [data-image],
+  [data-image-clip],
+  [data-shift],
+  [data-statement-line],
+  [data-not-found-line],
+  [data-service-index],
+  [data-service-list] > li,
+  [data-cta-button] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.js .js-hide,
+  html.js [data-reveal],
+  html.js [data-stagger] > *,
+  html.js [data-image],
+  html.js [data-shift],
+  html.js [data-cta-button] {
+    opacity: 0;
+  }
+
+  html.js [data-image] {
+    transform: scale(1.04);
+  }
+
+  html.js [data-image-clip] {
+    clip-path: inset(14% 0% 14% 0%);
+  }
+
+  html.js [data-shift] {
+    transform: translateX(-24px);
+  }
+
+  html.js [data-statement-line],
+  html.js [data-not-found-line] {
+    transform: scaleX(0);
+  }
+}
